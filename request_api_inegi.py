@@ -2,9 +2,9 @@ import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
-import creds  # Importar el archivo creds.py donde se almacena el token
+import creds 
 
-# URL de la API del INEGI para obtener la población de hombres y mujeres
+# URL de la API del INEGI
 url = f"https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/1002000002,1002000003/es/0700/false/BISE/2.0/{creds.token}?type=json"
 
 # Realizar la solicitud a la API
@@ -77,7 +77,7 @@ plt.annotate(f'{last_mujeres["Población Mujeres"]*1e-6:.1f}M',
              fontsize=10, color='red')
 
 # Guardar la gráfica en un archivo con DPI ajustado
-plt.savefig('grafica_instagram.png', dpi=150, bbox_inches='tight')  # DPI ajustado para evitar problemas de tamaño
+plt.savefig('grafica_instagram.png', dpi=150, bbox_inches='tight')  
 
 # Mostrar la gráfica
 plt.show()
